@@ -28,30 +28,19 @@
 			<nav class="mob-main-mnu">
 				<div class="mob-main-mnu-content">
 					<ul class="mob-main-mnu-list">
-						<li><a href="about-us.html">About us</a></li>
+						<li><a href="#aboutus">About us</a></li>
 						<li>
-							<a href="#">Services</a>
-							<div class="mob-main-submnu">
-								<div class="mob-main-submnu-item">
-								</div>
-							</div>
+							<a href="#why">Why Us</a>
 						</li>
-						<li><a href="#">Pricing</a></li>
+						<li><a href="#proj">Projects</a></li>
 						<li>
-							<a href="#!">Pages</a>
-							<div class="mob-main-submnu">
-								<div class="mob-main-submnu-item">
-									<h5 class="mob-main-submnu-item-title">Elements</h5>
-								</div>
-								<div class="mob-main-submnu-item">
-									<h5 class="mob-main-submnu-item-title">Additional Pages</h5>
-								</div>
-							</div>
+							<a href="#team">Team</a>
 						</li>
 						<li>
 							<a href="https://blog.zairza.in">Blog</a>
 						</li>
-						<li><a href="contact-us.html">Contact Us</a></li>
+						<li><a href="#faq">FAQ</a></li>
+						<li><a href="#foot">Contact Us</a></li>
 					</ul>
 				</div>
 			</nav><!-- End mobile main menu -->
@@ -82,7 +71,7 @@
 									<!-- Begin social links -->
 									<ul class="social-links">
 										<li>
-											<a href="#!" title="Facebook">
+											<a href="https://www.facebook.com/zairza.cetb/" title="Facebook">
 												<i class="fa fa-facebook" aria-hidden="true"></i>
 											</a>
 										</li>
@@ -92,7 +81,7 @@
 											</a>
 										</li>
 										<li>
-											<a href="#!" title="LinkedIn">
+											<a href="https://www.linkedin.com/company/zairza" title="LinkedIn">
 												<i class="fa fa-linkedin" aria-hidden="true"></i>
 											</a>
 										</li>
@@ -131,23 +120,24 @@
 										<!-- Begin main menu -->
 										<nav class="main-mnu">
 											<ul class="main-mnu-list">
-												<li><a href="about-us.html" data-title="About us"><span>About us</span></a></li>
+												<li><a href="#aboutus" data-title="About us"><span>About us</span></a></li>
 												<li class="main-mnu-item-has-child">
-													<a href="services.html" data-title="Services">
-														<span>Services</span>
+													<a href="#why" data-title="Why Us">
+														<span>Why Us</span>
 													</a>
 												</li>
-												<li><a href="pricing.html" data-title="Pricing"><span>Pricing</span></a></li>
+												<li><a href="#proj" data-title="Projects"><span>Projects</span></a></li>
 												<li class="main-mnu-item-has-child main-mnu-item-mega-mnu">
-													<a href="#!" data-title="Pages">
-														<span>Pages</span>
+													<a href="#team" data-title="Team">
+														<span>Team</span>
 													</a>
 												<li class="main-mnu-item-has-child">
 													<a href="https://blog.zairza.in" data-title="Blog">
 														<span>Blog</span>
 													</a>
 												</li>
-												<li><a href="contact-us.html" data-title="Contact Us"><span>Contact Us</span></a></li>
+												<li><a href="#faq" data-title="FAQ"><span>FAQ</span></a></li>
+												<li><a href="#foot" data-title="Contact Us"><span>Contact Us</span></a></li>
 											</ul>
 										</nav><!-- End main menu -->
 									</div>
@@ -212,6 +202,19 @@
 							width: 100%;
 							height: auto;
 						}
+						.main-banner h2{
+							font-size: 20px;
+							position: relative;
+							text-align: center;
+							text-transform: capitalize;
+							font-weight: bolder;
+							font-family:monospace;
+							position: absolute;
+							top: 35%;
+							left: 28%;
+							color: white;
+							-webkit-text-stroke: 1px black;
+						}
 					}
 					.fadeInUp{
 						font-size: 80px;
@@ -230,7 +233,7 @@
 				</div><!-- End main banner -->
 
 			<!-- Begin our services -->
-			<section class="section services">
+			<section class="section services"  id="aboutus">
 				<div class="container">
 					<div class="row">
 						<div class="col-12">
@@ -252,7 +255,7 @@
 			</section><!-- End our serveces -->
 
 			<!-- Begin why choose us -->
-			<section class="section section-bg">
+			<section class="section section-bg" id="why">
 				<div class="container">
 					<div class="row items">
 						<div class="col-12">
@@ -337,11 +340,12 @@
 			</section><!-- End why choose us -->
 
 			<!-- Begin counter section -->
-			<section class="section">
+			<section class="section" id="Achievements">
 				<div class="container">
 					<div class="wrapp-section-title section-title-center">
 						<h2 class="section-title">Achievements</h2>
 						<hr style=" border: 0;height: 2px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
+
 					</div>
 						<ol>
 							<li>Highest Number Of Google Summer of Code interns from Odisha in 2017 and 2018</li>
@@ -354,7 +358,7 @@
 			</section><!-- End counter section -->
 
 			<!-- Begin latest projects -->
-			<section class="section section-projects section-overflow-hidden section-bg">
+			<section class="section section-projects section-overflow-hidden section-bg" id="proj">
 				<div class="container">
 					<div class="row">
 						<div class="col-12">
@@ -504,7 +508,7 @@
 					<div class="row">
 						<div class="col-12">
 							<div class="section-btns justify-content-center">
-								<a href="#!" class="btn btn-widht-ico btn-w240 ripple">
+								<a href="#proj" class="btn btn-widht-ico btn-w240 ripple">
 									<span>See All Projects</span>
 									<i class="fa fa-arrow-right" aria-hidden="true"></i>
 								</a>
@@ -515,7 +519,7 @@
 			</section><!-- End latest projects -->
 
 			<!-- Begin team -->
-			<section class="section">
+			<section class="section" id="team">
 				<div class="container">
 					<div class="row items">
 						<div class="col-12">
@@ -1012,7 +1016,7 @@
 			</section><!-- End latest blogs -->
 
 			<!-- Begin reviews -->
-			<section class="section">
+			<section class="section"id="faq">
 				<div class="container">
 					<div class="row">
 						<div class="col-12">
@@ -1021,7 +1025,7 @@
 								<hr style=" border: 0;height: 2px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
 							</div>
 						</div>
-						<div class="col-6">
+						<div class="col-lg-6 col-md-6 col-12">
 						<h4>Why Zairza</h4>
 						<p>For people persuing careers in computers and/or robotics, writing code, developing softwares, and creating exceptional things. That's what we do here. We do things and we help people who are really interested into them.</p>
 						<h4>How can I join?</h4>
@@ -1029,7 +1033,7 @@
 						<h4>What is the scope of Zairza?</h4>
 						<p>The talent pool of the club is widely ranged. We have members working on Web Development, Android Development, Embedded Systems, IOT, Robotics, Machine Learning, Computer Vision and Artificial Intelligence. Our Alumnis are placed in prestigious organization around the globe.</p>
 						</div>
-						<div class="col-6">
+						<div class="col-lg-6 col-md-6 col-12">
 							<h4>I have a Tech project. How can Zairza help me?</h4>
 							<p>Zairza can provide you with space and environment to work on your project. We have stable fast internet connection and all the tools, components and other required resources for your project. Given proper report, we can also fund your project. Apart from this, we have senior experienced mentors who will be more than happy to guide you throughout your project.</p>
 							<h4>What are the club timings?</h4>
@@ -1044,7 +1048,7 @@
 		</div>
 
 		<!-- Begin footer -->
-		<footer class="footer">
+		<footer class="footer" id="foot">
 			<div class="footer-main">
 				<div class="container">
 					<div class="row items">

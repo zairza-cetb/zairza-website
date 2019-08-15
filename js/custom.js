@@ -36,9 +36,9 @@ $(function() {
 		color: '#000000',
 		opacity: 0.8
 	});
-	
 
-	
+
+
 	formingHrefTel();
 	headerFixed();
 	headerSearch();
@@ -85,8 +85,8 @@ if(containerEl !== null) {
 }
 
 var optionsCookies = {
-	title: 'Cookies',
-	message: 'We use cookies to understand how you use our site, to personalize content and to improve your experience. By continuing to use our site, you accept our use of cookies and revised.',
+	title: '',
+	message: '',
 	delay: 600,
 	expires: 30,
 	onAccept: function () {
@@ -214,11 +214,11 @@ function headerNav() {
 	$(".main-mnu-btn").on("click", function() {
 		var _body = $("body"),
 			offsetTop = $(".header-fixed").offset().top;
-		
+
 		$(this).toggleClass("active");
 
 		_body.toggleClass("mob-main-mnu-open").scrollTop(offsetTop);
-		
+
 		if(_body.hasClass("mob-main-mnu-open")) {
 			$(".mf-bg").addClass("visible");
 		} else {
@@ -262,7 +262,7 @@ function inputChange() {
     } else {
       _this.addClass("focus");
 	}
-	
+
   });
 
   input
@@ -272,7 +272,7 @@ function inputChange() {
         wrappInput = _this.parent();
 
 	  wrappInput.addClass("focus");
-	  
+
     })
     .on("keyup change", function() {
 
@@ -285,7 +285,7 @@ function inputChange() {
       } else {
         wrappInput.addClass("focus");
 	  }
-	  
+
     })
     .on("blur", function() {
 
@@ -294,16 +294,16 @@ function inputChange() {
         wrappInput = _this.parent();
 
       if(val === "") {
-		wrappInput.removeClass("focus"); 
+		wrappInput.removeClass("focus");
 	  }
 	});
-	
+
 }
 
 function phoneMask() {
-	
+
 	var listCountries = $.masksSort($.masksLoad("data/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
-	
+
 	var maskOpts = {
 		inputmask: {
 			definitions: {
@@ -336,7 +336,7 @@ function forms() {
 	},
 		"The email is not a valid email."
 	);
-	
+
 	$(".сallback_popup_form").validate({
       rules: {
         NameCallBack: {
@@ -376,7 +376,7 @@ function forms() {
 
       }
 	});
-	
+
 
 	$(".contact-form").validate({
       rules: {
@@ -424,7 +424,7 @@ function forms() {
 
       }
 	});
-	
+
 	$(".footer-subscribe").validate({
 		rules: {
 		  ContactEmail: {
@@ -442,15 +442,15 @@ function forms() {
 		},
 		submitHandler: function(form) {
 		  var th = $(form);
-  
+
 		  //customAlert(text, duration, alertInfo) info = "success" || "danger" || "warning" || "default"
 		  customAlert("Successfully sent!", 4000, "success");
-  
+
 		  setTimeout(function() {
 			  th.trigger("reset");
 			  $(".form-field").removeClass("focus");
 		  }, 1000);
-  
+
 		}
 	});
 
@@ -474,15 +474,15 @@ function forms() {
 		},
 		submitHandler: function(form) {
 		  var th = $(form);
-  
+
 		  //customAlert(text, duration, alertInfo) info = "success" || "danger" || "warning" || "default"
 		  customAlert("Successfully sent!", 4000, "success");
-  
+
 		  setTimeout(function() {
 			  th.trigger("reset");
 			  $(".form-field").removeClass("focus");
 		  }, 1000);
-  
+
 		}
 	});
 
@@ -724,7 +724,7 @@ function carousels() {
 			lazyLoading();
 		}
 	});
-	
+
 	var mainSlider = $(".main-banner-slider");
 	mainSlider.owlCarousel({
 		animateIn: "fadeIn",
@@ -820,9 +820,9 @@ function footerReveal() {
 			content.css({
 			'margin-bottom' : footer.outerHeight()
 			});
-		  
+
 		} else {
-	
+
 			footer.css({
 				'z-index' : 0,
 				position : 'relative',
@@ -831,11 +831,11 @@ function footerReveal() {
 			content.css({
 			'margin-bottom' : '0'
 			});
-	
+
 		}
 
 	});
-	
+
 }
 
 function lazyLoading() {
@@ -891,11 +891,11 @@ function customAlert(text, duration, alertInfo) {
 function contentTable() {
 	var contentTable = $(".content");
 	if(contentTable.length) {
-		
+
 		$.each(contentTable.find("table"), function() {
 			$(this).wrap("<div class='table-responsive-outer'></div>").wrap("<div class='table-responsive'></div>");
 		});
-		
+
 	}
 }
 
@@ -997,7 +997,7 @@ function initMap() {
                     }
                 } else {
                   console.log("Status: " + status);
-                    
+
                 }
             });
         }
@@ -1049,20 +1049,20 @@ function initializeClock(id, endtime) {
 
 function detectIE() {
 	var ua = window.navigator.userAgent;
-  
+
 	var msie = ua.indexOf('MSIE ');
 	if (msie > 0) {
 	  // IE 10 or older => return version number
 	  return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
 	}
-  
+
 	var trident = ua.indexOf('Trident/');
 	if (trident > 0) {
 	  // IE 11 => return version number
 	  var rv = ua.indexOf('rv:');
 	  return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
 	}
-  
+
 	// other browser
 	return false;
 }
