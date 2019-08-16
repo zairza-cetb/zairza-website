@@ -49,7 +49,6 @@ $(function() {
 	tabsAndAccordions();
 
 	inputChange();
-	phoneMask();
 	forms();
 
 	contentTable();
@@ -297,33 +296,6 @@ function inputChange() {
 		wrappInput.removeClass("focus");
 	  }
 	});
-
-}
-
-function phoneMask() {
-
-	var listCountries = $.masksSort($.masksLoad("data/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
-
-	var maskOpts = {
-		inputmask: {
-			definitions: {
-				'#': {
-					validator: "[0-9]",
-					cardinality: 1
-				}
-			},
-			showMaskOnHover: false,
-            autoUnmask: true,
-            clearMaskOnLostFocus: true
-		},
-		match: /[0-9]/,
-		replace: '#',
-		listKey: "mask",
-	};
-
-	$('.mask-phone').inputmasks($.extend(true, {}, maskOpts, {
-		list: listCountries
-	}));
 
 }
 
