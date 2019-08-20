@@ -774,41 +774,41 @@ function carousels() {
 
 }
 
-function footerReveal() {
+// function footerReveal() {
 
-	var footer = $(".footer"),
-        content = $(".main-inner"),
-        win = $(window);
+// 	var footer = $(".footer"),
+//         content = $(".main-inner"),
+//         win = $(window);
 
-	win.on('load resize', function() {
+// 	win.on('load resize', function() {
 
-		if (footer.outerHeight() <= win.outerHeight() && footer.offset().top >= win.outerHeight()) {
+// 		if (footer.outerHeight() <= win.outerHeight() && footer.offset().top >= win.outerHeight()) {
 
-			footer.css({
-				'z-index' : -10,
-				position : 'fixed',
-				bottom : 0
-			});
-			content.css({
-			'margin-bottom' : footer.outerHeight()
-			});
+// 			footer.css({
+// 				'z-index' : -10,
+// 				position : 'fixed',
+// 				bottom : 0
+// 			});
+// 			content.css({
+// 			'margin-bottom' : footer.outerHeight()
+// 			});
 
-		} else {
+// 		} else {
 
-			footer.css({
-				'z-index' : 0,
-				position : 'relative',
-				bottom : 0
-			});
-			content.css({
-			'margin-bottom' : '0'
-			});
+// 			footer.css({
+// 				'z-index' : 0,
+// 				position : 'relative',
+// 				bottom : 0
+// 			});
+// 			content.css({
+// 			'margin-bottom' : '0'
+// 			});
 
-		}
+// 		}
 
-	});
+// 	});
 
-}
+// }
 
 function lazyLoading() {
 	$('.lazy').Lazy({
