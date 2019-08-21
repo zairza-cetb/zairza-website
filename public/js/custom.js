@@ -53,7 +53,7 @@ $(function() {
 
 	contentTable();
 
-	footerReveal();
+	// footerReveal();
 
 	$(window).on("resize", function() {
 		headerFixed();
