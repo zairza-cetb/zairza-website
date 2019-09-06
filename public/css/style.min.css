@@ -325,6 +325,10 @@ input[type="radio"] {
   box-sizing: border-box;
   padding: 0;
 }
+.scroll{
+min-height: inherit;
+ overflow-y: scroll;
+}
 input[type="date"],
 input[type="datetime-local"],
 input[type="month"],
