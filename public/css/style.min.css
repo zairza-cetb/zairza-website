@@ -4060,8 +4060,9 @@ a:hover {
   margin-right: 10px;
 }
 .logo img {
-  max-height: 55px;
+  max-height: 60px;
   max-width: 160px;
+  margin-left: 30px;
 }
 .logo svg {
   display: block;
@@ -4337,7 +4338,9 @@ body.mob-main-mnu-open .mob-main-mnu {
   position: relative;
   display: block;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
+  padding-right: 30px;
+  margin-right: 25px;
 }
 .main-mnu-list > li.main-mnu-item-has-child {
   padding-right: 7px;
