@@ -4006,7 +4006,7 @@ a:hover {
   width: 100%;
   padding: 15px 0;
   background-color: #fff;
-  height: 65px;
+  height: 60px;
   font-size: 14px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4023,7 +4023,7 @@ a:hover {
   -webkit-box-shadow: 0 0 13px 0 rgba(77, 82, 94, 0.15);
   box-shadow: 0 0 13px 0 rgba(77, 82, 94, 0.15);
   min-height: auto;
-  height: 65px;
+  height: 60px;
 }
 .header-fixed.fixed .logo {
   max-height: 35px;
