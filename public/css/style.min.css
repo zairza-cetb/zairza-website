@@ -3386,7 +3386,7 @@ a:hover {
   color: #fff;
 }
 .section-bg {
-  background-color: #f0f4f8;
+  /* background-color: #f0f4f8; */
   background-position: center;
   background-size: cover;
 }
