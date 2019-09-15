@@ -1,16 +1,206 @@
-<section class="section" id="Achievements">
-  <div class="container">
-    <div class="wrapp-section-title section-title-center">
-      <h2 class="section-title">Achievements</h2>
-      <hr style=" border: 0;height: 2px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    h2{
+  text-align:center;
+  padding: 20px;
+}
+/* Slider */
 
-    </div>
-      <ol>
-        <li>Highest Number Of Google Summer of Code interns from Odisha in 2017 and 2018</li>
-        <li>One student got selected for Outreachy Round 16 Internship.</li>
-        <li>Highest Package in the placement year 2017 and 2018</li>
-        <li>Research Fellows at Indian Academy Of Sciences on 2016, 2017 and 2018</li>
-        <li>Alumnus at ISRO, NowFloats, Siemens, Intel, Microsoft, Amazon</li>
-      </ol>
-  </div>
-</section>
+.slick-slide {
+    margin: 0px 20px;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-slider
+{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+</style>
+<script>
+    $(document).ready(function(){
+    $('.customer-logos').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});
+</script>
+<div class="container">
+  <h2 class="section-title wow fadeIn">Achievements</h2>
+  <hr style=" border: 0;height: 2px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
+   <section class="customer-logos slider">
+      <div class="slide">
+          <a href="#" data-toggle="tooltip" title="Highest number of participants in GSoC from Odisha in 2017 and 2018">
+                <img src="https://cdn-media-1.freecodecamp.org/images/K5GBpft1n-egGksdS-UBGEm2fubx94Q2Qy1E">
+          </a>
+        </div>
+      <div class="slide">
+        <a href="#" data-toggle="tooltip" title="Outreachy interns for two consecutive years 2018 and 2019">
+          <img src="https://pbs.twimg.com/profile_images/561419803202568194/Pjk5iqNn.png">
+        </a>
+        </div>
+      <div class="slide">
+          <a href="#" data-toggle="tooltip" title="6 winners in Smart Odisha Hackathon 2018">
+            <img src="https://cdn-az.allevents.in/banners/3807c480-e4ca-11e8-9aa1-3dda9c965bad-rimg-w300-h300-dca80000-gmir.png">
+          </a>
+        </div>
+      <div class="slide">
+          <a href="#" data-toggle="tooltip" title="Semi Finalists at eYRC 2017, IIT Bombay">
+            <img src="https://media.glassdoor.com/sqll/369662/eyantra-squarelogo-1464096884539.png">
+          </a>
+        </div>
+      <div class="slide">
+        <a href="#" data-toggle="tooltip" title="Top 3 teams in the competition held at KIIT, Bbsr">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Space_Apps_Logo_Black.JPG">
+        </a>   
+      </div>
+      <div class="slide">
+        <a href="#" data-toggle="tooltip" title="Winner at InfoSys Robotics Camp, 2018">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy19kY-_vC1CrjOh_FJ3SnmE1W4EyO3G8TLAGeL3SUrETEsm8D">
+        </a>
+        </div>
+      <div class="slide">
+        <a href="#" data-toggle="tooltip" title="Finalist and Semi-finalist at Indian Road Safety Challenge, IIT Guwahati">
+            <img src="https://solveirsc.s3.amazonaws.com/Collaborators_logo/22775616830a48c09e00aa1480f3e331.jpg">
+        </a>  
+        </div>
+      <div class="slide">
+        <a href="#" data-toggle="tooltip" title="Runners Up, Tata women of Mettle 2018">
+            <img src="https://www.tatasteel.com/media/8726/wom_logo.png">
+        </a>
+        </div>
+      <div class="slide">
+        <a href="#" data-toggle="tooltip" title="Sub section for gesture-to-speech using Leap-Motion-Controller">
+            <img src="https://iv2019.org/wp-content/uploads/2019/04/IEEEcarr%C3%A9.png">
+        </a>
+        </div>
+    <div class="slide">
+        <a href="#" data-toggle="tooltip" title="4 members selected for IISc summer fellowship">
+            <img src="https://1.bp.blogspot.com/-KxmBCARwbUw/Wdl7oaWZ6nI/AAAAAAAABvk/SMxsP91h6Dc5gj0039ONKuCX5SrZSsbwACLcBGAs/s1600/IISc_logo.gif">
+        </a>
+        </div>
+   </section>
+</div>
