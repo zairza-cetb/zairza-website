@@ -1,14 +1,11 @@
+
 <h4 class="section-title" style="background-color:#4C2452; text-align:center; color:#fff; padding:10px; margin:0;">Projects</h4>
 <section class="section section-projects section-overflow-hidden section-bg" id="proj" style="background-image:url(img/project_bg.png)">
   <div class="container">
     <div class="row wow fadeIn">
       <div class="col-12">
-        <div class="wrapp-section-title section-title-center">
-        </div>
-      </div>
-      <div class="col-12">
         <div class="project-nav">
-          <ul class="project-nav-list">
+          <ul class="project-nav-list" >
             <li class="mixitup-control-active" data-filter="all">All</li>
             <li data-filter=".project-mobile-apps">Software Projects</li>
             <li data-filter=".project-custom-software">Hardware Projects</li>
@@ -144,15 +141,18 @@
         </div><!-- End project item -->
       </div>
     </div>
-    <!-- <div class="row">
-      <div class="col-12">
-        <div class="section-btns justify-content-center">
-          <a href="#proj" class="btn btn-widht-ico btn-w240 ripple">
-            <span>See All Projects</span>
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
-    </div> -->
   </div>
 </section>
+
+<style media="screen">
+  .project-nav{
+    position: relative;
+    padding:0 !important;
+  }
+@media only screen and (max-width: 600px) {
+  .project-nav-list {
+    font-size:14px;
+  }
+  }
+
+</style>

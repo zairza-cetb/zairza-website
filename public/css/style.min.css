@@ -3363,7 +3363,7 @@ a:hover {
 }
 .section {
   position: relative;
-  /* padding: 65px 0; */
+  padding: 65px 0;
 }
 .page-sections {
   padding-top: 45px;
@@ -9164,7 +9164,7 @@ textarea {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 22px;
   text-transform: uppercase;
   width: 100%;
   color: #fff;
@@ -9183,7 +9183,7 @@ textarea {
 }
 .project-nav-list li.mixitup-control-active,
 .project-nav-list li:hover {
-  color: #2c7ae7;
+  font-weight: bolder;
 }
 .project-item {
   position: relative;
@@ -9227,7 +9227,7 @@ textarea {
 }
 .project-item-card-back {
   z-index: 1;
-  background-color: #2c7ae7;
+  background-color:#fff;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   display: -webkit-box;
@@ -9242,7 +9242,7 @@ textarea {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  color: #fff;
+  color: #4C2452;
   text-align: center;
   padding: 30px 40px;
 }
