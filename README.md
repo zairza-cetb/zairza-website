@@ -9,18 +9,4 @@ years but test the theories and sometimes make our own. The club is managed
 by its students and alumni. The society was founded in the year 2005 and got a
 officially recognition in the year 2007 as a technical society of CET. 
 
-## Contributing
-Contributors are welcome. To contribute
-- fork the project
-- clone it using
-```
-git clone <your forked repo URL>
-```
-- install dependencies using
-```
-npm install
-```
-- run the server using
-```
-npm start
-```
+For contributing read, [Contribution guide](/CONTRIBUTING.md)
