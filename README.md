@@ -1,12 +1,7 @@
 # zairza-website
-Website for Zairza Technical Society, the technical club of CET-Bhubaneswar.
+A website for Zairza Technical Society, a technical division of CET-Bhubaneswar.
 
 ## About us
-ZAIRZA, a society, a cult for CETIANS who want to be ahead in the game. Sure
-we all have talent, in this club we put our talents through many obstacles and
-we conquer them. We walk out as winners who not only read books all these
-years but test the theories and sometimes make our own. The club is managed
-by its students and alumni. The society was founded in the year 2005 and got a
-officially recognition in the year 2007 as a technical society of CET. 
+ZAIRZA, is a group for CETIANS who want to be ahead in the game. We all have talent, but together we put our talents through many obstacles and we conquer them. We come out as winners who don't just follow creators but test the theories and become creators ourselves. The group was founded in 2005 and gained official recognition in 2007 as a technical society of CET. 
 
-For contributing read, [Contribution guide](/CONTRIBUTING.md)
+If you would like to contribute, please visit [Contribution guide](/CONTRIBUTING.md)
