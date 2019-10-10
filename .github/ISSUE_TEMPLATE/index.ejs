@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Zairza</title>
+
+	<meta name="description" content="ZAIRZA, a society for CETIANS who want to be ahead in the game. We walk out as winners who not only read books but test the theories and sometimes make our own">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="icon" href="img/favicon.ico" />
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<script src="js/wow.min.js"></script>
+	<script>
+		new WOW().init();
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+</head>
+<style>
+	body {
+		font-family: 'Open Sans', sans-serif;
+	}
+</style>
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+	
+	<main class="main">
+
+		<div class="main-inner">
+
+			<!-- Begin mobile main menu -->
+			<%- include navbar.ejs %>
+			<!-- End header -->
+
+			<!-- Begin main banner -->
+			<div class="main-banner ">
+				<img src="img/mobilebanner.png" class="mobilebanner" alt="Banner" width="100%" />
+				<img src="img/banner.png" id="banner" alt="Banner" />
+				<h3 id="cover-head">ABOUT US</h3>
+				<p id="cover-text"><b>ZAIRZA</b>, a society, a cult for CETIANS who want to be ahead in the game. Sure <br> we all have talent, but in this club we put our talents through many tests and <br>we conquer them. We walk out as winners who not only read books all these <br>years but also test the theories and sometimes make our own. The club is managed <br>by its students and alumni. The society was founded in the year 2005 and got an <br>official recognition in the year 2007 as a technical society of CET. The society <br>consists of three wings</p>
+				<style>
+					@media only screen and (max-width: 600px){
+						#banner {
+							display: none;
+							width: 100%;
+							height: auto;
+						}
+						#cover-text,#cover-head{
+							display: none;
+						}
+					}
+
+					@media only screen and (min-width: 600px) {
+						.mobilebanner {
+							display: none;
+						}
+
+						#aboutus {
+							display: none;
+						}
+					}
+					#cover-text{
+						position: absolute;
+						top: 35%;
+						left: 5%;
+						letter-spacing: 2px;
+						line-height: inherit;
+						text-align: justify;
+					}
+					#cover-head{
+						position: absolute;
+						top: 30%;
+						left: 5%;
+					}
+				</style>
+				</div><!-- End main banner -->
+
+				<!-- Begin about us -->
+				<%- include aboutus.ejs %>
+				<!-- End about us -->
+
+				<!-- Begin why choose us -->
+				<%- include whyus.ejs %>
+				<!-- End why choose us -->
+
+				<!-- Begin latest projects -->
+				<%- include projects.ejs %>
+				<!-- End latest projects -->
+
+
+				<!-- Begin latest blogs -->
+				<%- include blogs.ejs %>
+				<!-- End latest blogs -->
+
+				<!-- Begin achievements section -->
+				<%- include achievements.ejs %>
+				<!-- End achievements section -->
+
+				<!-- Begin team -->
+				<%- include team.ejs %>
+
+				<!-- Begin faq -->
+			<%- include faq.ejs %>
+			<!-- End faq -->
+
+		</div>
+
+		<!-- Begin footer -->
+		<%- include footer.ejs %>
+		<!-- End footer -->
+
+	</main><!-- End main -->
+
+	<script src="js/script.min.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<style>
+    h2{
+  text-align:center;
+  padding: 20px;
+}
+/* Slider */
+
+.slick-slide {
+    margin: 0px 20px;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-slider
+{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+</style>
+<script>
+    $(document).ready(function(){
+    $('.customer-logos').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});
+</script>
+<div class="container-fluid section-achievements">
+    <div class="container">
+      <h2 class="section-title title-achievements wow fadeIn" style="font-size:30px;">Achievements</h2>
+       <section class="customer-logos slider">
+          <div class="slide">
+              <a href="#" data-toggle="tooltip" title="Highest number of participants in GSoC from Odisha in 2017 and 2018">
+                    <img class="slide-image" alt="google summer of code" src="https://cdn-media-1.freecodecamp.org/images/K5GBpft1n-egGksdS-UBGEm2fubx94Q2Qy1E">
+              </a>
+            </div>
+          <div class="slide">
+            <a href="#" data-toggle="tooltip" title="Outreachy interns for two consecutive years of 2018 and 2019">
+              <img class="slide-image" src="https://pbs.twimg.com/profile_images/561419803202568194/Pjk5iqNn.png" alt="outreachy">
+            </a>
+            </div>
+          <div class="slide">
+              <a href="#" data-toggle="tooltip" title="6 winners in the Smart Odisha Hackathon 2018">
+                <img class="slide-image" src="https://cdn-az.allevents.in/banners/3807c480-e4ca-11e8-9aa1-3dda9c965bad-rimg-w300-h300-dca80000-gmir.png" alt="smart odisa hackathon">
+              </a>
+            </div>
+          <div class="slide">
+              <a href="#" data-toggle="tooltip" title="Semi Finalists at eYRC 2017, IIT Bombay">
+                <img class="slide-image" src="https://media.glassdoor.com/sqll/369662/eyantra-squarelogo-1464096884539.png" alt="eyantra">
+              </a>
+            </div>
+          <div class="slide">
+            <a href="#" data-toggle="tooltip" title="Top 3 teams in the competition held at KIIT, Bbsr">
+                <img class="slide-image" src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Space_Apps_Logo_Black.JPG" alt="space app challenge">
+            </a>
+          </div>
+          <div class="slide">
+            <a href="#" data-toggle="tooltip" title="Winner at InfoSys Robotics Camp, 2018">
+                <img class="slide-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy19kY-_vC1CrjOh_FJ3SnmE1W4EyO3G8TLAGeL3SUrETEsm8D" alt="infosys">
+            </a>
+            </div>
+          <div class="slide">
+            <a href="#" data-toggle="tooltip" title="Finalist and Semi-finalist at the Indian Road Safety Challenge, IIT Guwahati">
+                <img class="slide-image" src="https://solveirsc.s3.amazonaws.com/Collaborators_logo/22775616830a48c09e00aa1480f3e331.jpg" alt="road safety">
+            </a>
+            </div>
+          <div class="slide">
+            <a href="#" data-toggle="tooltip" title="Runners Up, Tata women of Mettle 2018">
+                <img class="slide-image" src="https://www.tatasteel.com/media/8726/wom_logo.png" alt="women of mettle">
+            </a>
+            </div>
+          <div class="slide">
+            <a href="#" data-toggle="tooltip" title="Sub section for gesture-to-speech using Leap-Motion-Controller">
+                <img class="slide-image" src="https://iv2019.org/wp-content/uploads/2019/04/IEEEcarr%C3%A9.png" alt="slide image">
+            </a>
+            </div>
+        <div class="slide">
+            <a href="#" data-toggle="tooltip" title="4 members selected for IISc summer fellowship">
+                <img class="slide-image" src="https://i.imgur.com/ny3mptS.png" alt="indian institute of science">
+            </a>
+            </div>
+       </section>
+    </div>
+</div>
+
+<style>
+    .slide-image {
+        border-radius: 10%;
+        height: inherit;
+    }
+
+    .section-achievements {
+        background-image: linear-gradient(to left, #63006E ,  #B90084);
+        background-position: center;
+        padding-bottom: 50px;
+    }
+
+    .title-achievements {
+        color: white;
+    }
+    .customer-logos{
+      padding-bottom: 50px;
+      padding-top: 30px;
+    }
+</style>
