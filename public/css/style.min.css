@@ -9190,7 +9190,11 @@ textarea {
   display: block;
   height: 400px;
   width: 100%;
-  overflow: hidden;
+
+  /* Project cards rotate animation */
+  perspective: 250rem;
+  -moz-perspective: 250rem;
+  -webkit-perspective: 250rem;
 }
 .project-item:hover .project-item-card-front {
   -webkit-transform: rotateY(180deg);
