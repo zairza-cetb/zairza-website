@@ -12,7 +12,7 @@ for (let i=0; i<=3; i++) {
     title: json[i].title,
     href: json[i].href,
     author: json[i].author,
-    release: json[i].release.split("T")[0].replace('/-/g', '/'),
+    release: json[i].release.split("T")[0].replace(/-/g, '/'),
     cover: json[i].cover
   })
 }

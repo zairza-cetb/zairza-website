@@ -6,9 +6,9 @@
                     <h2 class="section-title">Featured Blogs</h2>
                 </div>
             </div>
+            <% data.forEach(function (post) { %>
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <!-- Begin news item -->
-                <% data.forEach(function (post) { %>
                 <article class="news-item item item-style">
                     <a href="<%= post.href %>" class="news-item-img">
                         <img data-src="<%= post.cover %>" class="lazy"
@@ -22,13 +22,13 @@
                                     title="<%= post.title %>"><%= post.title %></a>
                         </h4>
                         <div class="news-item-desc">
-                            <p><%= post.author %></p>
+                            <p>By <%= post.author %></p>
                         </div>
                     </div>
                 </article>
-                <% }); %>
                 <!-- End news item -->
             </div>
+            <% }); %>
             <div class="col-12">
                 <div class="section-btns justify-content-center">
                     <a href="https://blog.zairza.in" class="btn btn-widht-ico btn-w240 ripple button  ">
