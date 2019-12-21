@@ -20,6 +20,9 @@ app.get("/scrape", function (req, res) {
     // set the url from which node will scrape from
     url = "https://blog.zairza.in/"
 
+    // scraped data is stored here
+    let data = []
+
     // make request to the to be scraped website through request
     request(url, function (error, response, html) {
         // check if any errors
@@ -32,11 +35,12 @@ app.get("/scrape", function (req, res) {
             // Declare variables to capture:
             // TODO: SCRAPE: covers, releases, titles, authors
 
-            let title, author, release, cover;
+            let title, href, author, release, cover;
 
             // make constructor function blog
-            const Blog = function (title, author, release, cover) {
+            const Blog = function (title, href, author, release, cover) {
                 this.title = title
+                this.href = href
                 this.author = author
                 this.release = release
                 this.cover = cover
@@ -48,35 +52,33 @@ app.get("/scrape", function (req, res) {
 
                 while (i <= 1) {
                     title = $(this).find("h3").text()
+                    href = $(this).find(".u-clearfix").next("a").attr("href")
                     author = $(this).find(".postMetaInline-authorLockup").children().first().text()
                     release = $(this).find("time").attr("datetime")
                     cover = $(this).find(".graf-image").last().attr("src")
 
-                    const newBlog = new Blog(title, author, release, cover)
+                    const newBlog = new Blog(title, href, author, release, cover)
                     console.log(newBlog)
 
-                    // TODO: write blog objects into blogs.json file
-                    fs.readFile("blogs.json", function (err, data) {
-                        if (!err) {
-                            var json = JSON.parse(data)
-                            json.push(newBlog)
-
-                            fs.writeFile("blogs.json", JSON.stringify(json, null, 4), function (err) {
-                                if (!err) {
-                                    console.log("wrote one object")
-                                } else {
-                                    console.log(err)
-                                }
-                            })
-                        } else {
-                            console.log(err)
-                        }
+                    data.push({
+                        "title": newBlog.title,
+                        "href": newBlog.href,
+                        "author": newBlog.author,
+                        "release": newBlog.release,
+                        "cover": newBlog.cover
                     })
 
                     // continuation of loop
                     i += 1
                 }
             })
+
+            // Add data array into a json file
+            fs.writeFile("data.json", JSON.stringify(data, null, 4), function (err) {
+                if (err) {
+                    console.log(err)
+                }
+            });
         }
     })
 
