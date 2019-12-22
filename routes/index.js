@@ -8,11 +8,13 @@ let data = []
 for (let i=0; i<=3; i++) {
   let release = json[i].release
 
+  let date = json[i].release.split("T")[0].replace(/-/g, '/')
+
   data.push({
     title: json[i].title,
     href: json[i].href,
     author: json[i].author,
-    release: json[i].release.split("T")[0].replace(/-/g, '/'),
+    release: date.split("/").reverse().join("/"),
     cover: json[i].cover
   })
 }

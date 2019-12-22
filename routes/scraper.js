@@ -58,7 +58,6 @@ app.get("/scrape", function (req, res) {
                     cover = $(this).find(".graf-image").last().attr("src")
 
                     const newBlog = new Blog(title, href, author, release, cover)
-                    console.log(newBlog)
 
                     data.push({
                         "title": newBlog.title,
