@@ -17,7 +17,7 @@ const app = express();
 
 app.get("/scrape", function (req, res) {
 
-    // set the url from which node will scrape from
+    // set the main page url
     url = "https://blog.zairza.in/"
 
     // scraped data is stored here
@@ -70,6 +70,22 @@ app.get("/scrape", function (req, res) {
                     // continuation of loop
                     i += 1
                 }
+            })
+
+            // This scrapes the one latest blog post
+            $(".u-paddingTop30").filter(function () {
+
+                title = $(this).find("h3").first().text()
+                href = $(this).find(".u-borderLighter").attr("href")
+                author = $(this).find(".u-flexCenter").children().last().children().first().text()
+                release = $(this).find("time").attr("datetime")
+
+                data.unshift({
+                    "title": title,
+                    "href": href,
+                    "author": author,
+                    "release": release
+                })
             })
 
             // Add data array into a json file
