@@ -95,8 +95,52 @@ app.get("/scrape", function (req, res) {
                 }
             });
         }
-    })
 
+    // TODO: scraper for cover image from individual blog post
+
+    let j
+
+    for (j = 0; j <= 3; j++) {
+
+        // set url for the cover image
+        coverURL = data[j].href
+
+        let coverData = []
+        let finalCoverUrl = []
+
+        request(coverURL, function (error, response, html) {
+
+            if (!error) {
+
+                let $ = cheerio.load(html)
+
+                // Declaring variables to scrape
+                let coverLink
+
+                const Cover = function (cover) {
+                    this.cover = cover
+                }
+
+                $(".paragraph-image").closest("figure").filter(function () {
+
+                    let element = $(this).find("noscript").html()
+                    let imgsrc = $(element).attr("src")
+
+                    coverData.push(imgsrc)
+
+                })
+
+                newCover = new Cover(coverData[0])
+                console.log(newCover)
+
+            }
+
+        })
+
+    }
+
+
+    })
 
 });
 
