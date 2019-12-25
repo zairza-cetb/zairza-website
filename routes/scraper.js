@@ -35,7 +35,7 @@ app.get("/scrape", function (req, res) {
             // Declare variables to capture:
             // TODO: SCRAPE: covers, releases, titles, authors
 
-            let title, href, author, release, cover;
+            let title, href, author, release;
 
             // make constructor function blog
             const Blog = function (title, href, author, release, cover) {
@@ -43,7 +43,6 @@ app.get("/scrape", function (req, res) {
                 this.href = href
                 this.author = author
                 this.release = release
-                this.cover = cover
             }
 
             $(".postArticle--short").filter(function () {
@@ -55,16 +54,14 @@ app.get("/scrape", function (req, res) {
                     href = $(this).find(".u-clearfix").next("a").attr("href")
                     author = $(this).find(".postMetaInline-authorLockup").children().first().text()
                     release = $(this).find("time").attr("datetime")
-                    cover = $(this).find(".graf-image").last().attr("src")
 
-                    const newBlog = new Blog(title, href, author, release, cover)
+                    const newBlog = new Blog(title, href, author, release)
 
                     data.push({
                         "title": newBlog.title,
                         "href": newBlog.href,
                         "author": newBlog.author,
-                        "release": newBlog.release,
-                        "cover": newBlog.cover
+                        "release": newBlog.release
                     })
 
                     // continuation of loop
@@ -98,15 +95,15 @@ app.get("/scrape", function (req, res) {
 
     // TODO: scraper for cover image from individual blog post
 
-    let j
+    let count = 0
+    let finalFourUrl = []
 
-    for (j = 0; j <= 3; j++) {
+    while (count < 4) {
 
         // set url for the cover image
-        coverURL = data[j].href
+        coverURL = data[count].href
 
         let coverData = []
-        let finalCoverUrl = []
 
         request(coverURL, function (error, response, html) {
 
@@ -131,14 +128,25 @@ app.get("/scrape", function (req, res) {
                 })
 
                 newCover = new Cover(coverData[0])
-                console.log(newCover)
 
             }
 
+        finalFourUrl.push({
+            "img": newCover.cover
         })
 
-    }
 
+        fs.writeFile("cover.json", JSON.stringify(finalFourUrl, null, 4), function (err) {
+            if (err) {
+                console.log(err)
+            }
+        })
+
+    })
+
+    count++
+    // while loop ends
+    }
 
     })
 
