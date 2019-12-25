@@ -10,9 +10,18 @@ const json = require("./json/data.json")
 
 const app = express();
 
-
 let count = 0
 let finalFourUrl = []
+let bloglinks = []
+
+// This brings first four urls from data.json to bloglinks (array)
+
+for (let i = 0; i <= 3; i++) {
+
+    let coverlink = json[i].href
+    bloglinks.push(coverlink)
+
+}
 
 
 app.get("/scrapcover", function (req, res) {
@@ -20,7 +29,7 @@ app.get("/scrapcover", function (req, res) {
     while (count < 4) {
 
         // set url for the cover image
-        coverURL = json[count].href
+        let coverURL = json[count].href
         console.log(coverURL)
 
         let coverData = []
@@ -67,6 +76,7 @@ app.get("/scrapcover", function (req, res) {
         count++
         // while loop ends
     }
+
 
 })
 
