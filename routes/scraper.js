@@ -86,67 +86,13 @@ app.get("/scrape", function (req, res) {
             })
 
             // Add data array into a json file
-            fs.writeFile("data.json", JSON.stringify(data, null, 4), function (err) {
+            fs.writeFile(__dirname + "/../routes/json/data.json", JSON.stringify(data, null, 4), function (err) {
                 if (err) {
                     console.log(err)
                 }
             });
         }
 
-    // TODO: scraper for cover image from individual blog post
-
-    let count = 0
-    let finalFourUrl = []
-
-    while (count < 4) {
-
-        // set url for the cover image
-        coverURL = data[count].href
-
-        let coverData = []
-
-        request(coverURL, function (error, response, html) {
-
-            if (!error) {
-
-                let $ = cheerio.load(html)
-
-                // Declaring variables to scrape
-                let coverLink
-
-                const Cover = function (cover) {
-                    this.cover = cover
-                }
-
-                $(".paragraph-image").closest("figure").filter(function () {
-
-                    let element = $(this).find("noscript").html()
-                    let imgsrc = $(element).attr("src")
-
-                    coverData.push(imgsrc)
-
-                })
-
-                newCover = new Cover(coverData[0])
-
-            }
-
-        finalFourUrl.push({
-            "img": newCover.cover
-        })
-
-
-        fs.writeFile("cover.json", JSON.stringify(finalFourUrl, null, 4), function (err) {
-            if (err) {
-                console.log(err)
-            }
-        })
-
-    })
-
-    count++
-    // while loop ends
-    }
 
     })
 
