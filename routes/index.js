@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const moment = require("moment")
-const json = require('./data.json')
+
+const json = require("./json/data.json")
+const cover = require("./json/cover.json")
 
 // need 4 elements from the json array in blog.ejs file
 let ejsRenderedData = []
@@ -15,7 +17,7 @@ for (let i=0; i<=3; i++) {
     href: json[i].href,
     author: json[i].author,
     release: date.format("DD/MM/YYYY"),
-    cover: json[i].cover
+    cover: cover[i].img
   })
 }
 
