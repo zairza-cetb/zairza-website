@@ -14,8 +14,7 @@ const request = require("request");
 
 const app = express();
 
-
-// app.get("/scrape", function (req, res) {
+function getBlogDetails() {
 
     // set the main page url
     url = "https://blog.zairza.in/"
@@ -229,9 +228,6 @@ const app = express();
 
     }) // main if (!error) block ends
 
+}
 
-// });
-
-// app.listen(3000, function () {
-//     console.log("Magic happens at port 3000")
-// });
+module.exports = getBlogDetails();
