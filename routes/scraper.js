@@ -21,7 +21,8 @@ app.get("/scrape", function (req, res) {
     url = "https://blog.zairza.in/"
 
     // scraped data is stored here
-    let data = []
+    let scrapContent = []
+
 
     // make request to the to be scraped website through request
     request(url, function (error, response, html) {
@@ -57,7 +58,7 @@ app.get("/scrape", function (req, res) {
 
                     const newBlog = new Blog(title, href, author, release)
 
-                    data.push({
+                    scrapContent.push({
                         "title": newBlog.title,
                         "href": newBlog.href,
                         "author": newBlog.author,
@@ -77,7 +78,7 @@ app.get("/scrape", function (req, res) {
                 author = $(this).find(".u-flexCenter").children().last().children().first().text()
                 release = $(this).find("time").attr("datetime")
 
-                data.unshift({
+                scrapContent.unshift({
                     "title": title,
                     "href": href,
                     "author": author,
@@ -86,15 +87,148 @@ app.get("/scrape", function (req, res) {
             })
 
             // Add data array into a json file
-            fs.writeFile(__dirname + "/../routes/json/data.json", JSON.stringify(data, null, 4), function (err) {
+            fs.writeFile(__dirname + "/../routes/json/data.json", JSON.stringify(scrapContent, null, 4), function (err) {
                 if (err) {
                     console.log(err)
                 }
             });
         }
 
+        // scrapContent has all blog objects inside an array
+        // TODO: Add cover image urls into cover.json
 
-    })
+        // MAKE A CONSTRUCTION FUNCTION TO STORE COVER URLS
+        const Cover = function (cover) {
+            this.cover = cover
+        }
+
+        // FIRST COVER:
+
+        if (true) {
+
+            let finalFourURL = []
+
+            request(scrapContent[0].href, (error, response, html) => {
+                if (!error) {
+
+                    let coverData = []
+                    let $ = cheerio.load(html)
+
+                    $(".paragraph-image").closest("figure").filter(function () {
+
+                        let element = $(this).find("noscript").html()
+                        let imgsrc = $(element).attr("src")
+
+                        coverData.push(imgsrc)
+
+                    })
+
+                    newCover1 = new Cover(coverData[0])
+                    finalFourURL.push({
+                        "img": newCover1.cover
+                    })
+
+                    // SECOND COVER:
+
+                    if (true) {
+                        request(scrapContent[1].href, (error, response, html) => {
+                            if (!error) {
+
+                                let coverData = []
+                                let $ = cheerio.load(html)
+
+                                $(".paragraph-image").closest("figure").filter(function () {
+
+                                    let element = $(this).find("noscript").html()
+                                    let imgsrc = $(element).attr("src")
+
+                                    coverData.push(imgsrc)
+
+                                })
+
+                                newCover2 = new Cover(coverData[0])
+                                finalFourURL.push({
+                                    "img": newCover2.cover
+                                })
+
+
+                                // THIRD COVER:
+
+                                if (true) {
+                                    request(scrapContent[2].href, (error, response, html) => {
+                                        if (!error) {
+
+                                            let coverData = []
+                                            let $ = cheerio.load(html)
+
+                                            $(".paragraph-image").closest("figure").filter(function () {
+
+                                                let element = $(this).find("noscript").html()
+                                                let imgsrc = $(element).attr("src")
+
+                                                coverData.push(imgsrc)
+
+                                            })
+
+                                            newCover3 = new Cover(coverData[0])
+                                            finalFourURL.push({
+                                                "img": newCover3.cover
+                                            })
+
+
+                                            // FOURTH COVER:
+
+                                            if (true) {
+                                                request(scrapContent[3].href, (error, response, html) => {
+                                                    if (!error) {
+
+                                                        let coverData = []
+                                                        let $ = cheerio.load(html)
+
+                                                        $(".paragraph-image").closest("figure").filter(function () {
+
+                                                            let element = $(this).find("noscript").html()
+                                                            let imgsrc = $(element).attr("src")
+
+                                                            coverData.push(imgsrc)
+
+                                                        })
+
+                                                        newCover4 = new Cover(coverData[0])
+                                                        finalFourURL.push({
+                                                            "img": newCover4.cover
+                                                        })
+
+
+                                                        // console.log(finalFourURL)
+
+
+                                                        fs.writeFile(__dirname + "/../routes/json/cover.json", JSON.stringify(finalFourURL, null, 4), function (err) {
+                                                            if (err) {
+                                                                console.log(err)
+                                                            }
+                                                        })
+                                                    }
+                                                })
+
+                                            }
+
+                                        }
+                                    })
+
+                                }
+                            }
+                        })
+
+                    }
+                }
+            })
+
+        }
+
+
+    }) // main if (!error) block ends
+
 
 });
 
