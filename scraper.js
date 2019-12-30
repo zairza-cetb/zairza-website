@@ -15,7 +15,7 @@ const request = require("request");
 const app = express();
 
 
-app.get("/scrape", function (req, res) {
+// app.get("/scrape", function (req, res) {
 
     // set the main page url
     url = "https://blog.zairza.in/"
@@ -87,7 +87,7 @@ app.get("/scrape", function (req, res) {
             })
 
             // Add data array into a json file
-            fs.writeFile(__dirname + "/../routes/json/data.json", JSON.stringify(scrapContent, null, 4), function (err) {
+            fs.writeFile(__dirname + "/json/data.json", JSON.stringify(scrapContent, null, 4), function (err) {
                 if (err) {
                     console.log(err)
                 }
@@ -203,7 +203,7 @@ app.get("/scrape", function (req, res) {
                                                         // console.log(finalFourURL)
 
 
-                                                        fs.writeFile(__dirname + "/../routes/json/cover.json", JSON.stringify(finalFourURL, null, 4), function (err) {
+                                                        fs.writeFile(__dirname + "/json/cover.json", JSON.stringify(finalFourURL, null, 4), function (err) {
                                                             if (err) {
                                                                 console.log(err)
                                                             }
@@ -230,8 +230,8 @@ app.get("/scrape", function (req, res) {
     }) // main if (!error) block ends
 
 
-});
+// });
 
-app.listen(3000, function () {
-    console.log("Magic happens at port 3000")
-});
+// app.listen(3000, function () {
+//     console.log("Magic happens at port 3000")
+// });

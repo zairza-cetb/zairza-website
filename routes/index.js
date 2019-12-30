@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const moment = require("moment")
 
-const json = require("./json/data.json")
-const cover = require("./json/cover.json")
+const json = require("../json/data.json")
+const cover = require("../json/cover.json")
 
 // need 4 elements from the json array in blog.ejs file
 let ejsRenderedData = []
