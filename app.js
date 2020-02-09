@@ -27,7 +27,12 @@ app.use("/", routes);
 
 const main = require("./routes/scraper");
 // calling MAIN function from .routes
-main();
+
+try {
+    main();
+} catch (error) {
+    console.error("Error occured while calling main()");
+}
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
