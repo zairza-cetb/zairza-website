@@ -154,25 +154,21 @@ function main() {
             });
         }
     } catch (error) {
-        console.log(
+        console.error(
             "An error occured while fetching urls from data.json"
             // error
         );
     }
 
     try {
-        const scrapcover = async (req, res) => {
+        const scrapcover = (req, res) => {
             while (count < 4) {
                 // getting link of cover page which is to be scraped
                 let eachblogobject = bloglinks[count];
 
                 let coverData = []; // stores img link returned after scraping
 
-                await request(eachblogobject.link, function(
-                    error,
-                    response,
-                    html
-                ) {
+                request(eachblogobject.link, function(error, response, html) {
                     if (!error) {
                         let $ = cheerio.load(html);
 
@@ -271,5 +267,10 @@ function main() {
     scrape();
 }
 
-// module.exports = main;
-main();
+module.exports = main;
+
+// try {
+//     main();
+// } catch (error) {
+//     console.error("Error occured while calling main function");
+// }

@@ -25,6 +25,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", routes);
 
+const main = require("./routes/scraper");
+// calling MAIN function from .routes
+main();
+
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
     var err = new Error("Not Found");
