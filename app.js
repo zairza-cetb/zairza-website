@@ -7,9 +7,6 @@ var bodyParser = require("body-parser");
 
 var routes = require("./routes/index");
 
-var scraper = require("./routes/scraper");
-// scraper.main();
-
 var app = express();
 
 // view engine setup
@@ -25,8 +22,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", routes);
 
+// Calling the scraper to work when app.js is loaded
 const main = require("./routes/scraper");
-// calling MAIN function from .routes
 
 try {
     main();

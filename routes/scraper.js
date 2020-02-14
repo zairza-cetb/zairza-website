@@ -11,20 +11,23 @@ const fs = require("fs");
 const cheerio = require("cheerio");
 const request = require("request");
 
+// Every other function is contained inside main() which is called from app.js
 function main() {
     let start = 0;
 
+    // Simple generator function to generate ids for objects
     const index = () => {
         start++;
         return start;
     };
 
+    // This function is responsible for fetching all blog data except cover image links to data.json
     const scrape = (req, res) => {
         // set the main page url
         url = "https://blog.zairza.in/";
 
         // scraped data is stored here before pushing to data.json
-        let data = [];
+        let blogInfo = [];
 
         // make request to the to be scraped website through request
         request(url, function(error, response, html) {
@@ -36,7 +39,7 @@ function main() {
                 let $ = cheerio.load(html);
 
                 // Declare variables to capture:
-                // TODO: SCRAPE: covers, releases, titles, authors
+                // TODO: SCRAPE: releases, titles, authors
 
                 let id, title, href, author, release;
 
@@ -49,6 +52,7 @@ function main() {
                     this.release = release;
                 };
 
+                // This scrapes all blogs from medium except the first(latest) one
                 $(".postArticle--short").filter(function() {
                     let i = 1;
 
@@ -78,7 +82,7 @@ function main() {
                             release
                         );
 
-                        data.push({
+                        blogInfo.push({
                             id: newBlog.id,
                             title: newBlog.title,
                             href: newBlog.href,
@@ -90,7 +94,7 @@ function main() {
                     }
                 });
 
-                // This scrapes the one latest blog post
+                // This scrapes the first(latest) blog post
                 $(".u-paddingTop30").filter(function() {
                     id = 0;
                     title = $(this)
@@ -111,7 +115,7 @@ function main() {
                         .find("time")
                         .attr("datetime");
 
-                    data.unshift({
+                    blogInfo.unshift({
                         id,
                         title: title,
                         href: href,
@@ -120,10 +124,10 @@ function main() {
                     });
                 });
 
-                // Add data array into a json file
+                // Add blogInfo array into a blogInfo.json file
                 fs.writeFile(
                     __dirname + "/../json/data.json",
-                    JSON.stringify(data, null, 4),
+                    JSON.stringify(blogInfo, null, 4),
                     function(err) {
                         if (err) {
                             console.log(err);
@@ -138,8 +142,7 @@ function main() {
         finalFourImgUrl = [],
         bloglinks = [];
 
-    // This brings first four urls from data.json to bloglinks (array)
-
+    // This block fetches the urls of four latest blog posts from data.json and pushes to bloglinks (array)
     try {
         const jsonData = require("../json/data.json");
         // console.log(jsonData);
@@ -161,6 +164,8 @@ function main() {
     }
 
     try {
+        // This block scrapes the cover image from within each latest blog url
+
         const scrapcover = (req, res) => {
             while (count < 4) {
                 // getting link of cover page which is to be scraped
@@ -232,7 +237,7 @@ function main() {
         console.log("An error occured inside scrapcover function");
     }
 
-    // This block sorts the cover.json according to id no.
+    // This block sorts the cover.json according to id no. to maintain order among image scraped
     const sortCover = () => {
         let coverData = require("../json/cover.json");
 
@@ -249,9 +254,7 @@ function main() {
             }
         }
 
-        // now sortedArray is ready to push json file
-
-        // Add data array into a json file
+        // Add sortedArray into a json file
         fs.writeFile(
             __dirname + "/../json/coversorted.json",
             JSON.stringify(sortedArray, null, 4),

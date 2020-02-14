@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const moment = require("moment");
 
+// Try block runs if fetches data correctly from json folder
 try {
     const json = require("../json/data.json");
     const cover = require("../json/coversorted.json");
@@ -28,6 +29,8 @@ try {
 
     module.exports = router;
 } catch (error) {
+    // Catch block runs if somethings wrong with the scraped data in json folder
+    // Renders default blog data from default.json
     console.log("Default blogs are rendered.");
 
     const defaultRender = require("../json/default.json");
