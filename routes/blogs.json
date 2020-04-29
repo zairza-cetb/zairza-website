@@ -1,0 +1,64 @@
+{
+  "blogs": [
+    {
+      "title": "OAuth using MEVN Stack",
+      "author": "Ramakrishna Pattnaik",
+      "release": "2019-08-25T12:13:49.122Z",
+      "cover": "https://cdn-images-1.medium.com/fit/t/1600/480/1*zqCh8ZNR-LjBzaacpiIyUA.png"
+    },
+    {
+      "title": "A Guide to Dual Booting",
+      "author": "Dikshant Brahma",
+      "release": "2019-08-10T06:01:01.253Z",
+      "cover": "https://cdn-images-1.medium.com/fit/t/1600/480/1*5yVOKthzCe2Ko5zoCgrLkQ.jpeg"
+    },
+    {
+      "title": "Home Automation : Making Our Lives Easier",
+      "author": "Subhangi Choudhary",
+      "release": "2019-08-06T10:19:07.530Z",
+      "cover": "https://cdn-images-1.medium.com/fit/t/1600/480/1*pvH4Qw7wmBFu2meLGU4HXg.jpeg"
+    },
+    {
+      "title": "What is “BITCOIN” and How its Mining Process Works…",
+      "author": "Pruthwiraj Nayak",
+      "release": "2019-07-29T10:55:38.837Z",
+      "cover": "https://cdn-images-1.medium.com/fit/t/1600/480/0*OTNmLGvhRj5hjaTz"
+    },
+    {
+      "title": "Modern Radios — Miles of Range and Years of Battery Life?",
+      "author": "Sanjanamohapatra 99",
+      "release": "2019-07-14T09:29:38.928Z",
+      "cover": "https://cdn-images-1.medium.com/fit/t/1600/480/1*FM4WMjf-3728SkpU0U8miQ.jpeg"
+    },
+    {
+      "title": "Why ROS?",
+      "author": "Abhishek Mishra",
+      "release": "2019-06-26T17:40:00.150Z",
+      "cover": "https://cdn-images-1.medium.com/fit/t/1600/480/1*v7cjAaqtcc_CFvttj71cVA.jpeg"
+    },
+    {
+      "title": "5G: Is the future really near ?",
+      "author": "Aditya Bisoi",
+      "release": "2019-06-21T11:31:01.210Z",
+      "cover": "https://cdn-images-1.medium.com/fit/t/1600/480/1*fRPRazsiXnD9mHagkvlXdg.jpeg"
+    },
+    {
+      "title": "Human Area Network (HAN) : Turning Humans Into Swipe Card?",
+      "author": "Sanjanamohapatra 99",
+      "release": "2019-06-16T14:35:57.071Z",
+      "cover": "https://cdn-images-1.medium.com/fit/t/1600/480/1*8gJTwavRijtSTh-IKYqfgw.jpeg"
+    },
+    {
+      "title": "Security Features of Blockchain and How it Works",
+      "author": "Pruthwiraj Nayak",
+      "release": "2019-06-07T19:19:52.142Z",
+      "cover": "https://cdn-images-1.medium.com/fit/t/1600/480/0*5XeJrXJuug6FGcOo"
+    },
+    {
+      "title": "Industrial Automation For Enabling Industry 4.0",
+      "author": "Sarthak Kar",
+      "release": "2019-06-01T16:07:34.086Z",
+      "cover": "https://cdn-images-1.medium.com/fit/t/1600/480/1*ztlRN3Tpk8mk293ss5Xq8A.png"
+    }
+  ]
+}
