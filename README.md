@@ -1,4 +1,5 @@
 # zairza-website
+Provide some more details about the project in file READ.MD
 Website for Zairza Technical Society, the technical club of CET-Bhubaneswar.
 
 ## About us
